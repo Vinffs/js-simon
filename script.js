@@ -17,22 +17,29 @@ function simonSays() {
       numbersGenerated.push(randomNumber);
     }
   }
-  console.log(numbersGenerated);
 
-  const disappear = setInterval(maxTime, 3000);
+  const numToDisplay = document.getElementById("displayRandomNums");
+  numToDisplay.innerHTML = numbersGenerated;
+
+  setTimeout(maxTime, 3000);
   function maxTime() {
-    // console.clear();
-    clearInterval(disappear);
-    for (let i = 0; i < numbersGenerated.length; i++) {
-      promptNumbers.push(parseInt(prompt("digit the numbers you remember")));
-    }
-    console.log(promptNumbers);
+    numToDisplay.innerHTML = "";
+  }
 
+  for (let i = 0; i < numbersGenerated.length; i++) {
+    const input = document.createElement("input");
+    input.type = "number";
+    input.classList.add("my-input", "fs-4", "text-white", "text-center");
+    document.getElementById("inputContainer").appendChild(input);
+    const askPlayer = document.getElementById("askPlayer");
+    askPlayer.classList.toggle("d-none");
+  }
+
+  function confrontArrays() {
     let x = 0;
     while (x < promptNumbers.length) {
       numbersFound.push(promptNumbers[x]);
       x++;
     }
-    console.log(numbersFound);
   }
 }

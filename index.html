@@ -19,11 +19,28 @@
   </head>
 
   <body>
-    <header></header>
+    <!-- container -->
+    <div
+      id="wrapper">
 
-    <main></main>
+      <!-- title -->
+      <h1>Simon Says</h1>
 
-    <footer></footer>
+      <!-- display slot -->
+      <div id="displayRandomNums" class="m-4"></div>
+
+      <div id="askPlayer" class="d-none">
+        <h2>Insert the numbers you remember</h2>
+        <div id="inputContainer"></div>
+      </div>
+
+      <!-- button -->
+      <button class="m-4">Enter</button>
+
+      <!-- container that gives result of the exercise-->
+      <div class="result d-none"></div>
+
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="utility.js"></script>
